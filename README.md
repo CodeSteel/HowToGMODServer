@@ -30,6 +30,7 @@ This allows us to take the changes you've made in your local server and send the
 3. Create a new Private Reposiory for the Gamemode you are developing under that organization. Make sure it is set to Private.
 
 It should look something like this **github.com/MoonNetwork/DarkRP**
+![image](https://user-images.githubusercontent.com/48765827/236049473-f81edb99-3612-4a4e-bfc7-102891d84040.png)
 
 Next we need to set up the local server before going any further with Github.
 
@@ -93,6 +94,39 @@ Now whenever we want, we can go to the deploy's overview page and click New Depl
 
 Check FTP and make sure all the files are in the correct place. Great, this is probably the last time you'll need to use FTP.
 
+### 4. IDE (Visual Studio Code)
+
+You will most likely want an IDE, in this case Visual Studio Code, to manage/update your files. Visual Studio Codes makes things easier by having a built-in Source Control window which shows every change you've made on that commit. It's helpful for those times you forget what you've changed and want to look back and verify everything is good. It can also be helpful for mass-finding a function or string that is messing up. Just click `Ctrl + Shift + F` to search through every file.
+1. Download and install Visual Studio Code [here](https://code.visualstudio.com/)
+2. Now you can open your addons directory in VSCode and boom, you have the power of FTP all in one editor! 😎
+
 ### Conclusion
 
-Now that we have 
+Now that we have the Github Repository storing the server files, the DeployHQ account ready to push our changes to the live server, and the dedicated server to make the changes on, we just need to put it all together.
+
+### Development Flow
+1. Open your server's `addons` directory in VSCode. You can either open a terminal in the addon's directory and type `code .` or you can right click in the directory and click 'Open with Code'.
+2. Make a change, or changes.
+3. Push changes to Github:
+```
+git add .
+git commit -m "feat: my changes"
+git push origin main
+```
+4. Go to your DeployHQ overview and click `New Deployment`. Click Deploy to deploy your latest commit to the sever.
+
+And that's it, you just updated the live server with your local server's files!
+
+### Bonus
+When commiting to github, you have to type 3 commands that are hard to remember every time. Make this process easier by installing my Github CLI, (Boom)[https://www.npmjs.com/package/@steelio/boom-cli].
+
+This cuts down the pushing process from this:
+```
+git add .
+git commit -m "feat: my changes"
+git push origin main
+```
+To only this:
+```
+boom push "feat: my changes"
+```
