@@ -118,7 +118,7 @@ git push origin main
 And that's it, you just updated the live server with your local server's files!
 
 ## Bonus!
-When commiting to github, you have to type 3 commands that are hard to remember every time. Make this process easier by installing my Github CLI, (Boom)[https://www.npmjs.com/package/@steelio/boom-cli].
+When commiting to github, you have to type 3 commands that are hard to remember every time. Make this process easier by installing my Github CLI, [Boom](https://www.npmjs.com/package/@steelio/boom-cli).
 
 This cuts down the pushing process from this:
 ```
@@ -131,7 +131,7 @@ To only this:
 boom push "feat: my changes"
 ```
 
-1. Start by installing NodeJS, (here)[https://nodejs.org/en] You may have to restart your computer after, I am not sure.
+1. Start by installing NodeJS, [here](https://nodejs.org/en) You may have to restart your computer after, I am not sure.
 2. Now install the Boom package with this command:
 ```
 npm install -g @steelio/boom-cli
@@ -140,8 +140,7 @@ npm install -g @steelio/boom-cli
 
 If it works then great, you successfully installed Boom.
 Now everytime you want to push an update, type `boom push "the update message"`!
-  
-  
-  
+
 Thanks for reading this guide! I hope you found something useful in it. If you want to contribute, just make a PR ❤️
+  
 http://codesteel.io/
