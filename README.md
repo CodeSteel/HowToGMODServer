@@ -2,6 +2,8 @@
 
 Welcome to "How to Manage a Garry's Mod Server", here I will try to explain the process of managing a Garry's Mod server properly with the aim of productivity and scale over time. I am sick of seeing populated servers with horrible development practices and even more so, tired of working for them, so read this guide and fix your shit.
 
+Disclaimer, all of the information in this README was gathered from my own personal experience. I built and managed a successful Garry's Mod server in the past and continue to do commissions for other servers in the community.
+
 ## The Explanation
 
 ### 1. Github
