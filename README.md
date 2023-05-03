@@ -27,7 +27,7 @@ This allows us to take the changes you've made in your local server and send the
 ### 1. Github
 1. Start by creating a Github account if you don't have one already.
 2. Create a new Github Organization with your ServerName/CompanyName.
-3. Create a new Reposiory for the Gamemode you are developing under that organization.
+3. Create a new Private Reposiory for the Gamemode you are developing under that organization. Make sure it is set to Private.
 
 It should look something like this **github.com/MoonNetwork/DarkRP**
 
@@ -54,3 +54,45 @@ start "SRCDS" /B srcds.exe -game garrysmod -conlog -port 27015 -console -conclea
 Now if you run `start.bat`, a terminal should open and the server should start. If it doesn't run, then congratulations you failed.
 
 Now that we have the server installed, we must set up our github repository with the `addons` folder.
+
+If you already have a live server with addons installed, now is the time to copy everything from the live server to your local server, only the `addons` folder.
+
+6. Open a terminal in your local server's `addons` directory. You can do this by right cicking in the directory and clicking "Open in Terminal".
+7. Type in these commands to initialize the github repository with the repository you made.
+```
+git init
+git remote add origin <THE_URL_TO_YOUR_REPOSITORY>
+git fetch
+git checkout main
+git add .
+git commit -m "init"
+git push origin main
+```
+
+This will initialize a new repository, set it up with the repository you made, fetch any files the repo may have, add the files we already had, and push it to git.
+
+Congratulations, you created a repository and are now backing up your server files. Let's move on and set up DeployHQ.
+
+### 3. DeployHQ
+
+1. Go to https://deployhq.com/ and create a new account.
+2. Sign into your deploy panel and you should be greeted with a "Create a Project" screen.
+![image](https://user-images.githubusercontent.com/48765827/236048057-9feccc4b-5b6a-40ab-9896-f31c2ffdb043.png)
+3. Fill out the server information and select Github, click Create Project.
+![image](https://user-images.githubusercontent.com/48765827/236048127-42c75682-93bf-43f3-aa95-d4fe53795488.png)
+4. You should be able to link your Github account to your DeployHQ account, allowing you to select the Server's Repository. 
+![image](https://user-images.githubusercontent.com/48765827/236048298-4e0558ad-8cd0-47b2-b0e5-9fd46824b0e6.png)
+5. Now we must link the repository to the live serve so updates can be pushed. Fill out the New Server form with your server's connection info. For Physgun servers, use SSH/SFTP.
+![image](https://user-images.githubusercontent.com/48765827/236048546-0a308b64-6208-4bd1-ba5b-3511c8f16e83.png)
+6. On the bottom of the page, you should see Deployment Path as an option. This will be the directory the repository is updating the files to. For Physgun servers, this should be `/garrysmod/addons`, though it could differ depending on the server's host. Now you can click Create Server.
+![image](https://user-images.githubusercontent.com/48765827/236048822-14f0cbfa-2ee2-4caf-9854-db063c3aba60.png)
+
+If you didn't get any errors then great, it worked. Otherwise, you're going to have to debug the problem. 
+
+Now whenever we want, we can go to the deploy's overview page and click New Deployment. This will allow you to update the server with the latest commit, which should be "init". Go ahead and run the first deployment so DeployHQ is synced with what files we have on the server.
+
+Check FTP and make sure all the files are in the correct place. Great, this is probably the last time you'll need to use FTP.
+
+### Conclusion
+
+Now that we have 
