@@ -1,26 +1,26 @@
 # How to Manage a Garry's Mod Server
 
-Welcome to "How to Manage a Garry's Mod Server", here I will try to explain the process of managing a Garry's Mod server properly with the aim of productivity and scale over time. I am sick of seeing populated servers with horrible development practices so read this guide and please fix your shit.
+Welcome to "How to Manage a Garry's Mod Server", here I will try to explain the process of managing a Garry's Mod server properly with the aim of productivity and scale over time. I am sick of seeing populated servers with horrible development practices and even more so, tired of working for them, so read this guide and fix your shit.
 
 ## The Explanation
 
 ### 1. Github
-You will want to use Github for two main reasons, although there are many many more reasons why Github should be used.
+You need Github. Plain and simple. You will want to use Github for two main reasons, although there are many many more reasons why Github should be used.
 1. Github allows you to store a backup for every single update and every single line of code you change. This means, if you fuck shit up, you can easily revert back.
-2. Git's source conrol will make working with future developers, or any development you and your team contributes, much easier to manage and deploy as you can have mulitple people working on the same project at a time.
+2. Git's source conrol allows working with future developers, or any development you and your team contributes, much easier to manage and deploy as you can have mulitple people working on the same project at a time.
 
-If you plan to hire a developer for any commission work, a Github repository is a MUST.
+If you plan to hire a developer for any commission work, a Github repository is a MUST. **DO NOT** hire anyone for commission work without this step.
 
 ### 2. Local Dedicated Server
-You will want to set up a local dedicated server, this will be your dev server. Any future work YOU do should be done live on this server.
+You will want to set up a local dedicated server, this will be your dev server. Any future work YOU do should be done through this server. **DO NOT** use FTP to update your code, that is very bad practice. 
 
-Let me repeat, this is considered your dev server. **You should not be paying for a developer server.**
+Hosting the server yourself is free and allows you to develop much faster.
+
+It is also what we will be using to store your local github repository branch so you can make updates to your live server without ever touching or modifying any of the files, only your local files.
 
 ### 3. DeployHQ
 DeployHQ makes it easy to deploy your github repository to the live server. What this means is any updates you or your team makes can be pushed to the live server with a click of a button.
-
-
-
+This allows us to take the changes you've made in your local server and send them to the live server to be updated. DeployHQ is free, but limited to 5 deploys a day. As long as you have a decent update routine, this won't be an issue.
 
 ## The Setup
 
